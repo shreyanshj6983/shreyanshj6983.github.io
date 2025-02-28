@@ -1,0 +1,153 @@
+who are you = I am an AI-powered chatbot built into Shreyansh Modi's resume. How can I assist you?
+introduce yourself = I am a chatbot designed to provide details about Shreyansh Modi. Ask me anything about skills, experience, or projects.
+where are you from = I am based on Shreyansh Modi's resume, but Shreyansh Modi is from Jaipur, Rajasthan, India.
+
+what is your education = I am currently pursuing a Bachelor's of Computer Applications (BCA) in Artificial Intelligence and Machine Learning from ICFAI University Jaipur.
+where did you study = I study at ICFAI University Jaipur, Rajasthan.
+when did you graduate = I am expected to graduate in 2024.
+what is your cgpa = My current CGPA is 8.9.
+
+do you have work experience = Yes! I have completed multiple internships and currently work at CBI Solutions Pvt. Ltd.
+where have you worked = I have worked at ThinkNext Technologies, BMP Infotech, and CBI Solutions Pvt. Ltd.
+what is your current job = I am currently working at CBI Solutions Pvt. Ltd. in Jaipur, Rajasthan, India.
+what do you do at your job = I work on Python and machine learning, implementing data analysis, predictive modeling, and deep learning tasks.
+what is your role in cbi solutions = My role involves working with essential libraries like NumPy, Pandas, and Matplotlib for data analysis, as well as implementing machine learning models.
+what did you do at thinknext technologies = At ThinkNext Technologies, I was a Python trainee and intern where I learned Python and machine learning basics.
+what did you do at bmp infotech = At BMP Infotech, I did an internship focused on Python and machine learning from May 2023 to July 2023.
+
+what are your skills = My key skills include Python, Machine Learning, Data Analysis, Power BI, Image Classification, R Programming, and Databases (MySQL, MongoDB).
+do you know python = Yes! I am proficient in Python for data science, automation, and machine learning.
+do you have experience in machine learning = Yes! I have worked with machine learning algorithms, supervised and unsupervised learning, and deep learning frameworks like TensorFlow and PyTorch.
+do you know powerbi = Yes! I am skilled in Power BI for data visualization and business intelligence analytics.
+do you work with databases = Yes! I have experience working with both relational (MySQL) and NoSQL (MongoDB) databases.
+do you know r programming = Yes! I have knowledge of R programming for statistical analysis and data science.
+what frameworks do you use = I use TensorFlow, PyTorch, OpenCV, Flask, and Django for AI, ML, and web-based applications.
+
+do you have certifications = Yes! I have completed multiple certifications in AI, Python, and SQL.
+what certifications do you have = I have certifications in Generative AI by Google Cloud, Introduction to Python by Red Hat, Web Scraping, and SQL by HackerRank.
+do you have a certification in ai = Yes! I have completed the Generative AI course by Google Cloud.
+do you have a certification in sql = Yes! I have completed an SQL certification from HackerRank.
+
+tell me about your projects = I have worked on projects related to AI, ML, NLP, web scraping, and image classification. Let me know which one you're interested in!
+have you worked on ai projects = Yes! I have built AI models for NLP, computer vision, and predictive analytics.
+what is your latest project = My latest project is "Full Image Generating Model Using Half Images," which uses deep learning to reconstruct missing image sections.
+tell me about lane detection project = I implemented an image classification model using OpenCV to detect lanes in real time for autonomous vehicle navigation.
+tell me about sentiment analysis project = I built a sentiment analysis model using NLP and BERT to classify messages as positive, negative, or neutral.
+tell me about web scraping project = I scraped product details from Flipkart, including prices, descriptions, and ratings, and stored them in a structured database.
+tell me about spam classification project = I developed an ML model to classify messages as spam or non-spam using NLP techniques.
+tell me about emotion detection system = I built a real-time emotion detection model using computer vision and machine learning, integrated with a Flask web app.
+have you worked on predictive modeling = Yes! I have implemented machine learning algorithms for predictive modeling in weather forecasting and financial analysis.
+what is your weather prediction project = I created a weather prediction model using machine learning algorithms to analyze past weather data and make forecasts.
+
+where can i see your portfolio = You can check out my portfolio at [Your Portfolio Link].
+do you have a github = Yes! Here is my GitHub: [Your GitHub Link].
+where can i connect with you = You can connect with me on LinkedIn: https://www.linkedin.com/in/shreyansh-modi/.
+how can i contact you = You can email me at shreyanshj5067@gmail.com.
+do you have a resume = Yes! You can download my resume
+
+what machine learning algorithms do you know = I have experience with supervised (linear regression, decision trees, SVM) and unsupervised learning (K-means, PCA), as well as deep learning models.
+do you have experience with deep learning = Yes! I have worked with deep learning models using TensorFlow and PyTorch.
+have you worked with nlp = Yes! I have implemented NLP-based projects like sentiment analysis and spam classification.
+do you have experience in image classification = Yes! I have worked on image classification using CNNs and OpenCV for applications like lane detection.
+what libraries do you use in machine learning = I use NumPy, Pandas, Matplotlib, Scikit-Learn, TensorFlow, and PyTorch for ML and AI tasks.
+
+what is your chatbot built with = This chatbot is built using JavaScript and fetches responses from a text file.
+what programming languages do you know = I am proficient in Python, JavaScript, R, and SQL.
+do you have experience with web development = Yes! I have built web applications using HTML, CSS, JavaScript, Flask, and Django.
+do you know data analysis = Yes! I am skilled in data analysis using Python, Power BI, and SQL.
+do you have experience in data visualization = Yes! I have worked with Power BI, Matplotlib, and Seaborn for data visualization.
+
+hello=Hi there! How can I help you?
+hi=Hello! What can I do for you?
+how are you=I'm just a bot, but I'm doing great! How about you?
+bye=Goodbye! Have a great day!
+who are you=I'm your personal chatbot! Ask me anything.
+what do you do=I answer your questions about my creator and his experience.
+
+who made you=I was created based on Shreyansh Modi's resume details!
+
+where did you study=I studied AI and ML at ICFAI University, Jaipur.
+what did you study=Bachelor of Computer Applications in AI and ML.
+
+what is your cgpa=8.9 CGPA! Pretty solid, right?
+where are you from=Jaipur, Rajasthan, India.
+
+work experience=I have experience at CBI Solutions Pvt. Ltd. as a Python & ML developer.
+internships=I did internships at ThinkNext Technologies and BMP Infotech.
+what did you do in your internships=Worked on Python, ML basics, and real-world projects.
+
+your projects=I’ve worked on lane detection, sentiment analysis, spam classification, and more.
+tell me about lane detection=It’s an AI model using OpenCV to detect lanes for autonomous cars.
+sentiment analysis=I used NLP and BERT to analyze sentiments in texts like tweets & SMS.
+spam detection=Built a model to classify spam messages using ML techniques.
+web scraping=I scraped e-commerce data from Flipkart for analytics.
+emotion detection=Designed a real-time emotion recognition system using ML & Flask.
+
+your certifications=I have Generative AI by Google Cloud, SQL by Hackerrank, and more.
+python certification=Completed an intro to Python by Red Hat.
+
+your skills=Python, ML, Data Analysis, Power BI, MySQL, MongoDB, and R Programming.
+which programming languages you know=Mainly Python, with some experience in R and SQL.
+do you know databases=Yes! MySQL and MongoDB are my go-to databases.
+
+what ML frameworks do you use=TensorFlow and PyTorch for deep learning, plus OpenCV for image tasks.
+what ML algorithms you know=Supervised and unsupervised learning, predictive modeling, and classification.
+do you work with AI=Yes! My expertise is in AI, ML, and deep learning models.
+
+powerbi experience=I use Power BI for data visualization and analysis.
+what data analysis tools you use=NumPy, Pandas, and Matplotlib for processing and visualization.
+
+your job title=I’m currently a Python Developer at CBI Solutions Pvt. Ltd.
+what do you do in your job=Work on ML models, data analysis, and AI-driven solutions.
+
+where do you work=Currently at CBI Solutions Pvt. Ltd., Jaipur, India.
+do you work in a team=Yes! I collaborate with my team to solve AI & ML challenges.
+
+your favorite project=Emotion Detection System – real-time emotion recognition using AI!
+what project are you most proud of=Lane Detection for Autonomous Cars – cool tech for self-driving!
+
+what’s next for you=I’m always learning more about AI, ML, and automation.
+do you want to learn more=Yes! I always stay updated with new AI and ML advancements.
+
+default=I'm not sure how to respond to that. Try asking something else.
+
+hello=Hi there! How can I help you?
+hi=Hello! What can I do for you?
+how are you=I'm just a bot, but I'm doing great! How about you?
+bye=Goodbye! Have a great day!
+your name=I'm just a chatbot, but you can call me AI Bot. Created to assist you!
+your job=I'm here to answer your questions and assist you.
+your skills=I can provide information about Python, ML, AI, and more.
+experience=The user has interned at ThinkNext Technologies and BMP Infotech, working on Python and ML.
+work=CURRENTLY working at CBI Solutions Pvt. Ltd., focusing on ML and AI.
+education=Studied BCA in AI & ML from ICFAI University Jaipur (2021-2024), CGPA 8.9.
+certifications=Google Cloud Generative AI, Red Hat Python, Web Scraping, SQL by Hackerrank.
+projects=Worked on Lane Detection, Sentiment Analysis, Web Scraping, Spam Classification, and Emotion Detection.
+lane detection=Implemented lane detection using OpenCV for autonomous vehicle navigation.
+sentiment analysis=Developed sentiment analysis models using NLP and BERT for spam and tweet analysis.
+web scraping=Scraped Flipkart product details, including descriptions, prices, and ratings.
+spam detection=Built an ML model for spam classification using NLP techniques.
+emotion detection=Created a real-time emotion detection system using ML and Flask.
+skills=Proficient in Python, ML, Image Classification, Data Analysis, MySQL, MongoDB, R, and Power BI.
+python=Strong knowledge of Python for ML, AI, and automation tasks.
+ml=Implemented supervised and unsupervised ML models for predictive analytics.
+deep learning=Explored deep learning with TensorFlow and PyTorch.
+data analysis=Worked with Pandas, NumPy, and Matplotlib for data insights.
+database=Experienced with MySQL and MongoDB for data management.
+powerbi=Created interactive dashboards and reports for data visualization.
+r language=Used R programming for statistical analysis and data manipulation.
+current job=Working at CBI Solutions Pvt. Ltd., focusing on ML and AI.
+internship=Completed internships at ThinkNext Technologies and BMP Infotech.
+company=Working at CBI Solutions Pvt. Ltd. in Jaipur, India.
+where you work=Jaipur, Rajasthan, India.
+study=BCA in AI & ML from ICFAI University Jaipur.
+cgpa=Graduated with an 8.9 CGPA.
+your projects=Worked on ML-based projects like Lane Detection, Spam Detection, Web Scraping, and Emotion Detection.
+your tools=Python, TensorFlow, PyTorch, OpenCV, Power BI, SQL, MongoDB, R.
+your expertise=Specialized in ML, AI, Deep Learning, NLP, and Data Science.
+generative ai=Certified in Generative AI by Google Cloud.
+sql=Certified in SQL by Hackerrank.
+web scraping=Earned a Web Scraping Certification.
+job role=Working on ML and AI-based solutions at CBI Solutions.
+contact=I can assist with professional queries. Would you like an email ID?
+linkedin=You can find professional details on LinkedIn. please find the link - "https://www.linkedin.com/in/shreyansh-modi/".
