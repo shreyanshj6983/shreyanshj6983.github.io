@@ -226,4 +226,135 @@
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
 
+  // chat bot code
+  let chatbotResponses = {}; // Empty object to store responses
+
+  // Load chatbot responses from the text file
+  function loadResponses() {
+      fetch('responses.txt')
+          .then(response => response.text())
+          .then(data => {
+              chatbotResponses = parseResponses(data);
+          })
+          .catch(error => console.error("Error loading responses:", error));
+  }
+  
+  // Convert text file content into an object
+  function parseResponses(data) {
+      let lines = data.split("\n");
+      let responses = {};
+  
+      lines.forEach(line => {
+          let parts = line.split("="); // Split key-value pairs
+          if (parts.length === 2) {
+              let key = parts[0].trim().toLowerCase(); // Normalize keys
+              let value = parts[1].trim();
+              responses[key] = value;
+          }
+      });
+  
+      return responses;
+  }
+  
+  // Call loadResponses() when the page loads
+  document.addEventListener("DOMContentLoaded", function () {
+      loadResponses();
+  
+      let chatbot = document.getElementById("chatbot");
+      let chatMessages = document.getElementById("chat-messages");
+      let chatToggleButton = document.createElement("button");
+  
+      chatToggleButton.innerText = "AI Chat BOT";
+      chatToggleButton.style.position = "fixed";
+      chatToggleButton.style.bottom = "20px";
+      chatToggleButton.style.right = "20px";
+      chatToggleButton.style.zIndex = "1000";
+      chatToggleButton.onclick = function () {
+          chatbot.style.display = "block";
+          chatToggleButton.style.display = "none"; // Hide button when chatbot opens
+          showDefaultMessages();
+      };
+      document.body.appendChild(chatToggleButton);
+  
+      document.getElementById("chat-input").addEventListener("keypress", function(event) {
+          if (event.key === "Enter") {
+              sendMessage();
+          }
+      });
+  
+      document.querySelector("#chat-body button").addEventListener("click", sendMessage);
+  
+      // Close chatbot and show toggle button when clicked outside
+      document.addEventListener("click", function (event) {
+          if (!chatbot.contains(event.target) && event.target !== chatToggleButton) {
+              chatbot.style.display = "none";
+              chatToggleButton.style.display = "block"; // Show button when chatbot is closed
+          }
+      });
+  });
+  
+  // Show default messages when chatbot is opened
+  function showDefaultMessages() {
+      let chatMessages = document.getElementById("chat-messages");
+      chatMessages.innerHTML = ""; // Clear chat history
+  
+      let botMessage1 = document.createElement("p");
+      botMessage1.innerHTML = `<strong>Bot:</strong> Hello! I'm an AI Chat Bot of Shreyansh. You can ask me anything about Shreyansh like [Education, Skills, Projects, Experiences, etc.]`;
+      chatMessages.appendChild(botMessage1);
+  
+      let botMessage2 = document.createElement("p");
+      botMessage2.innerHTML = `<strong>Bot:</strong> Ask questions like - What is your CGPA, work experience, internships, projects, certifications, or job responsibilities.`;
+      chatMessages.appendChild(botMessage2);
+  }
+  
+  function sendMessage() {
+      let inputField = document.getElementById("chat-input");
+      let chatMessages = document.getElementById("chat-messages");
+      let message = inputField.value.trim().toLowerCase();
+  
+      if (message === "") return;
+  
+      inputField.value = "";
+  
+      let userMessage = document.createElement("p");
+      userMessage.innerHTML = `<strong>You:</strong> ${message}`;
+      chatMessages.appendChild(userMessage);
+  
+      // Add typing indicator
+      let typingIndicator = document.createElement("p");
+      typingIndicator.id = "typing-indicator";
+      typingIndicator.innerHTML = `<strong>Bot:</strong> Typing...`;
+      chatMessages.appendChild(typingIndicator);
+  
+      setTimeout(() => {
+          chatMessages.removeChild(typingIndicator); // Remove typing indicator
+          let botResponse = getBotResponse(message);
+  
+          let botMessage = document.createElement("p");
+          botMessage.innerHTML = `<strong>Bot:</strong> ${botResponse}`;
+          chatMessages.appendChild(botMessage);
+  
+          // Auto-scroll to the latest message
+          chatMessages.scrollTop = chatMessages.scrollHeight;
+      }, 1000);
+  }
+  
+  function getBotResponse(userMessage) {
+      // Check exact match first
+      if (chatbotResponses[userMessage]) {
+          return chatbotResponses[userMessage];
+      }
+  
+      // Check for partial or similar match (Improved fuzzy matching)
+      for (let key in chatbotResponses) {
+          if (userMessage.includes(key) || key.includes(userMessage)) {
+              return chatbotResponses[key];
+          }
+      }
+  
+      return chatbotResponses["default"] || "I'm not sure how to respond to that.";
+  }
+   
+  
+  
 })();
