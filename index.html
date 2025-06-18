@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shreyansh Modi - Python Developer | ML Engineer</title>
+    <meta name="description" content="Shreyansh Modi - Python Developer, Machine Learning Engineer & Data Analyst from Jaipur. Specialized in AI/ML, Data Analytics, and Full-Stack Development.">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Fonts -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- External Libraries -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">SM<span class="accent">.</span></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#certificates" class="nav-link">Certificates</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <canvas id="matrix-canvas"></canvas>
+        </div>
+        <div class="hero-content">
+            <div class="hero-text" data-aos="fade-up">
+                <h1 class="hero-title">
+                    Hi, I'm <span class="gradient-text">Shreyansh Modi</span>
+                </h1>
+                <div class="hero-subtitle">
+                    <span id="typed-text"></span>
+                    <span class="cursor">|</span>
+                </div>
+                <p class="hero-description">
+                Versatile Python Developer at CBI Solution PVT LTD with expertise in Machine Learning and Data Analysis.
+                Proficient in building and deploying scalable ML models (Scikit-learn, TensorFlow) on AWS EC2 for real-time analytics. 
+                Certified in Power BI with strong skills in data visualization and business intelligence. 
+                Experienced in extracting actionable insights from complex datasets using Python, SQL, and advanced analytics to drive data-informed decision making across organizations.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                </div>
+            </div>
+            <div class="hero-avatar" data-aos="fade-left">
+                <div class="avatar-container">
+                    <img src="\images\avatar-placeholder.png" alt="Shreyansh Modi" class="avatar-img">
+                    <div class="avatar-ring"></div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">About Me</h2>
+                <p class="section-subtitle">Get to know me better</p>
+            </div>
+            <div class="about-content">
+                <div class="about-card" data-aos="flip-left">
+                    <div class="card-front">
+                        <div class="about-info">
+                            <h3>Professional Journey</h3>
+                            <p>Currently working as a Python Developer at CBI Solution PVT LTD, with expertise in Machine Learning, Data Analysis.</p>
+                            <div class="stats">
+                                <div class="stat">
+                                    <span class="stat-number">1.5+</span>
+                                    <span class="stat-label">Years Experience</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-number">14+</span>
+                                    <span class="stat-label">Certifications</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-number">Multiple</span>
+                                    <span class="stat-label">Major Projects</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-details" data-aos="fade-left">
+                    <h3>My Story</h3>
+                    <p>
+                        I'm a passionate technologist who bridges the gap between data science and software development. 
+                        With a Bachelor's in Computer Application (AI & ML) from ICFAI University, I've cultivated 
+                        expertise in Python, Machine Learning, and Data Analytics.
+                    </p>
+                    <p>
+                        My journey spans from developing intelligent chatbots to deploying ML models on AWS, 
+                        always focused on creating solutions that make a real impact. I thrive on transforming 
+                        complex data into actionable insights and building scalable applications.
+                    </p>
+                    <div class="location-info">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Based in Jaipur, Rajasthan</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Technical Skills</h2>
+                <p class="section-subtitle">Technologies I work with</p>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
+                    <h3>Programming Languages</h3>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <i class="fab fa-python"></i>
+                            <span>Python</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-r-project"></i>
+                            <span>R Language</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-html5"></i>
+                            <span>HTML</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-css3-alt"></i>
+                            <span>CSS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
+                    <h3>Data Science & ML</h3>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <i class="fas fa-brain"></i>
+                            <span>Scikit-learn</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-robot"></i>
+                            <span>TensorFlow</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-fire"></i>
+                            <span>PyTorch</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-language"></i>
+                            <span>NLP & BERT</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="300">
+                    <h3>Data Analytics & BI</h3>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <i class="fas fa-chart-bar"></i>
+                            <span>Power BI</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-file-excel"></i>
+                            <span>Excel</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Data Visualization</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-analytics"></i>
+                            <span>Business Intelligence</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="400">
+                    <h3>Web Development</h3>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <i class="fas fa-flask"></i>
+                            <span>Flask</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-mobile-alt"></i>
+                            <span>Responsive Design</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-code"></i>
+                            <span>Frontend Development</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-server"></i>
+                            <span>Backend Integration</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="500">
+                    <h3>Cloud & Tools</h3>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <i class="fab fa-aws"></i>
+                            <span>AWS EC2</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-database"></i>
+                            <span>MySQL</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-code-branch"></i>
+                            <span>VS Code</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-subtitle">Some of my recent work</p>
+            </div>
+            
+            <div class="project-filters" data-aos="fade-up">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="ml">Machine Learning</button>
+                <button class="filter-btn" data-filter="web">Web Development</button>
+                <button class="filter-btn" data-filter="data">Data Analytics</button>
+            </div>
+
+            <div class="projects-grid">
+                <div class="project-card" data-category="web ml" data-aos="fade-up">
+                    <div class="project-image">
+                        <img src="\images\portfolio.png" alt="Digital Portfolio with AI Chatbot">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/shreyanshj6983/shreyanshj6983.github.io" class="project-link"><i class="fab fa-github"></i></a>
+                                <!--<a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Digital Portfolio with AI Chatbot</h3>
+                        <p>Interactive portfolio with custom AI chatbot using NLP and Flask integration</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Flask</span>
+                            <span class="tech-tag">NLP</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="ml" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-image">
+                        <img src="\images\Auto_value_car.png" alt="AutoValue ML Car Valuation">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/shreyanshj6983/AutoValue-ML---AI-Powered-Used-Car-Valuation-Platform" class="project-link"><i class="fab fa-github"></i></a>
+                                <!-- <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>AutoValue-ML Car Valuation Platform</h3>
+                        <p>AI-powered used car price prediction with modern Flask web interface</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Machine Learning</span>
+                            <span class="tech-tag">Flask</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Scikit-learn</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="ml" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-image">
+                        <img src="\images\Emotion_detection.png" alt="Emotion Detection System">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/shreyanshj6983" class="project-link"><i class="fab fa-github"></i></a>
+                                <!--<a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Emotion Detection System</h3>
+                        <p>Real-time emotion recognition using computer vision and machine learning</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Computer Vision</span>
+                            <span class="tech-tag">Flask</span>
+                            <span class="tech-tag">ML</span>
+                            <span class="tech-tag">OpenCV</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="ml data" data-aos="fade-up" data-aos-delay="300">
+                    <div class="project-image">
+                        <img src="\images\Bert_code.png" alt="Sentiment Analysis NLP">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/shreyanshj6983" class="project-link"><i class="fab fa-github"></i></a>
+                                <!--<a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Sentiment Analysis using NLP & BERT</h3>
+                        <p>Advanced sentiment analysis for SMS spam detection and tweet analysis</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">NLP</span>
+                            <span class="tech-tag">BERT</span>
+                            <span class="tech-tag">Transformers</span>
+                            <span class="tech-tag">Python</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="data" data-aos="fade-up" data-aos-delay="400">
+                    <div class="project-image">
+                        <img src="\images\web_scraping.png" alt="Web Scraping Analytics">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/shreyanshj6983" class="project-link"><i class="fab fa-github"></i></a>
+                                <!-- <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Web Scraping for E-Commerce Analytics</h3>
+                        <p>Automated data extraction from Flipkart for product analysis and insights</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Web Scraping</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Data Analysis</span>
+                            <span class="tech-tag">BeautifulSoup</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Experience & Education</h2>
+                <p class="section-subtitle">My professional journey</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">June 2024 - Present</div>
+                        <h3>Python Developer</h3>
+                        <h4>CBI Solution PVT LTD, Jaipur</h4>
+                        <p>
+                            Developing and maintaining high-quality machine learning projects using Python. 
+                            Working as a Data Analyst to analyze data, build predictive models, and deliver 
+                            actionable insights. Created frontend interfaces using HTML, CSS and integrated 
+                            with Flask backend for complete web applications.
+                        </p>
+                        <div class="timeline-skills">
+                            <span>Python</span>
+                            <span>Machine Learning</span>
+                            <span>Data Analysis</span>
+                            <span>Flask</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-left">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">May 2023 - July 2023</div>
+                        <h3>Junior Machine Learning Engineer</h3>
+                        <h4>BMP Infotech, Jaipur</h4>
+                        <p>
+                            Completed internship developing multiple machine learning projects. 
+                            Achieved 100% growth in practical understanding and application of 
+                            ML concepts. Worked on both minor and major projects enhancing 
+                            technical skills significantly.
+                        </p>
+                        <div class="timeline-skills">
+                            <span>Machine Learning</span>
+                            <span>Python</span>
+                            <span>Data Science</span>
+                            <span>Project Development</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-dot education"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2021 - 2024</div>
+                        <h3>Bachelor of Computer Application</h3>
+                        <h4>The ICFAI University, Jaipur</h4>
+                        <p>
+                            Specialized in Artificial Intelligence and Machine Learning. 
+                            Gained comprehensive knowledge in programming, data structures, 
+                            algorithms, and AI/ML fundamentals. Completed various projects 
+                            and research work in the field.
+                        </p>
+                        <div class="timeline-skills">
+                            <span>AI & ML</span>
+                            <span>Computer Science</span>
+                            <span>Programming</span>
+                            <span>Data Structures</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificates" class="certificates">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Certifications</h2>
+                <p class="section-subtitle">Professional achievements and learning</p>
+            </div>
+            
+            <div class="cert-filters" data-aos="fade-up">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="ai">AI/ML</button>
+                <button class="filter-btn" data-filter="data">Data Analytics</button>
+                <button class="filter-btn" data-filter="web">Web Development</button>
+                <button class="filter-btn" data-filter="cloud">Cloud</button>
+            </div>
+
+            <div class="certificates-grid">
+                <div class="cert-card" data-category="ai" data-aos="zoom-in">
+                    <div class="cert-image">
+                        <img src="\images\cert1-placeholder.jpeg" alt="Generative AI Certificate">
+                    </div>
+                    <div class="cert-content">
+                        <h3>AI Powered Python Developer</h3>
+                        <p>Be10x</p>
+                        <span class="cert-date">2025</span>
+                    </div>
+                </div>
+
+                <div class="cert-card" data-category="data" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="cert-image">
+                        <img src="\images\cert2-placeholder.jpeg" alt="SQL Certificate">
+                    </div>
+                    <div class="cert-content">
+                        <h3>Generative AI </h3>
+                        <p>Google Cloud</p>
+                        <span class="cert-date">2024</span>
+                    </div>
+                </div>
+
+                <div class="cert-card" data-category="data" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="cert-image">
+                        <img src="\images\cert3-placeholder.jpeg" alt="Power BI Certificate">
+                    </div>
+                    <div class="cert-content">
+                        <h3>Certificate of Appreciatation as team Leader</h3>
+                        <p>BMP Infotech</p>
+                        <span class="cert-date">2024</span>
+                    </div>
+                </div>
+
+                <div class="cert-card" data-category="web" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="cert-image">
+                        <img src="\images\cert4-placeholder.jpeg" alt="Python Certificate">
+                    </div>
+                    <div class="cert-content">
+                        <h3>Certificate of Project Completion of Web Scrapping</h3>
+                        <p>Duke University</p>
+                        <span class="cert-date">2023</span>
+                    </div>
+                </div>
+
+                <div class="cert-card" data-category="web" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="cert-image">
+                        <img src="\images\cert5-placeholder.jpeg" alt="Web Scraping Certificate">
+                    </div>
+                    <div class="cert-content">
+                        <h3>Industrial Training Program in AI & ML</h3>
+                        <p>ThinkNEXT Technologies, </p>
+                        <span class="cert-date">2023</span>
+                    </div>
+                </div>
+
+                <!-- Additional certificate placeholders -->
+                <div class="cert-card" data-category="ai" data-aos="zoom-in" data-aos-delay="500">
+                    <div class="cert-image">
+                        <img src="\images\cert6-placeholder.jpeg" alt="Certificate 6">
+                    </div>
+                    <div class="cert-content">
+                        <h3>Python Training</h3>
+                        <p>Red Hat</p>
+                        <span class="cert-date">2024</span>
+                    </div>
+                </div>
+
+                <div class="cert-card" data-category="data" data-aos="zoom-in" data-aos-delay="600">
+                    <div class="cert-image">
+                        <img src="\images\cert7-placeholder.jpeg" alt="Certificate 7">
+                    </div>
+                    <div class="cert-content">
+                        <h3>Training Program</h3>
+                        <p>NIPAM </p>
+                        <span class="cert-date">2024</span>
+                    </div>
+                </div>
+
+                <div class="cert-card" data-category="cloud" data-aos="zoom-in" data-aos-delay="700">
+                    <div class="cert-image">
+                        <img src="\images\cert8-placeholder.jpeg" alt="Certificate 8">
+                    </div>
+                    <div class="cert-content">
+                        <h3>SQL Basics</h3>
+                        <p>Hacker Rank</p>
+                        <span class="cert-date">2024</span>
+                    </div>
+                </div>
+
+                <div class="cert-card" data-category="ai" data-aos="zoom-in" data-aos-delay="800">
+                    <div class="cert-image">
+                        <img src="\images\cert9-placeholder.jpeg" alt="Certificate 9">
+                    </div>
+                    <div class="cert-content">
+                        <h3>Python</h3>
+                        <p>Skill-UP</p>
+                        <span class="cert-date">2024</span>
+                    </div>
+                </div>
+
+                <div class="cert-card" data-category="web" data-aos="zoom-in" data-aos-delay="900">
+                    <div class="cert-image">
+                        <img src="\images\cert10-placeholder.jpeg" alt="Certificate 10">
+                    </div>
+                    <div class="cert-content">
+                        <h3>OOPs Concept Completion</h3>
+                        <p>Great Learning</p>
+                        <span class="cert-date">2022</span>
+                    </div>
+                </div>
+            <!--
+                <div class="cert-card" data-category="data" data-aos="zoom-in" data-aos-delay="1000">
+                    <div class="cert-image">
+                        <img src="\images\cert1-placeholder.jpeg" alt="Certificate 11">
+                    </div>
+                    <div class="cert-content">
+                        <h3>Certificate 11</h3>
+                        <p>Institution</p>
+                        <span class="cert-date">2024</span>
+                    </div>
+                </div>
+
+                <div class="cert-card" data-category="cloud" data-aos="zoom-in" data-aos-delay="1100">
+                    <div class="cert-image">
+                        <img src="\images\cert1-placeholder.jpeg" alt="Certificate 12">
+                    </div>
+                    <div class="cert-content">
+                        <h3>Certificate 12</h3>
+                        <p>Institution</p>
+                        <span class="cert-date">2024</span>
+                    </div>
+                </div>
+
+                <div class="cert-card" data-category="ai" data-aos="zoom-in" data-aos-delay="1200">
+                    <div class="cert-image">
+                        <img src="\images\cert1-placeholder.jpeg" alt="Certificate 13">
+                    </div>
+                    <div class="cert-content">
+                        <h3>Certificate 13</h3>
+                        <p>Institution</p>
+                        <span class="cert-date">2024</span>
+                    </div>
+                </div>
+
+                <div class="cert-card" data-category="web" data-aos="zoom-in" data-aos-delay="1300">
+                    <div class="cert-image">
+                        <img src="\images\cert10-placeholder.jpeg" alt="Certificate 14">
+                    </div>
+                    <div class="cert-content">
+                        <h3>Certificate 14</h3>
+                        <p>Institution</p>
+                        <span class="cert-date">2024</span>
+                    </div>
+                </div>
+            -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">Let's work together</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info" data-aos="fade-right">
+                    <h3>Let's Connect</h3>
+                    <p>
+                        I'm always open to discussing new opportunities, interesting projects, 
+                        or just having a great conversation about technology and innovation.
+                    </p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>shreyanshj5067@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+91 6377337713</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Jaipur, Rajasthan</span>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://linkedin.com/in/shreyansh-modi" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/shreyanshj6983" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://shreyanshj6983.github.io/" target="_blank"><i class="fas fa-globe"></i></a>
+                    </div>
+                    <div class="resume-download">
+                        <a href="resume.pdf" download class="btn btn-primary">
+                            <i class="fas fa-download"></i> Download Resume
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-form" data-aos="fade-left">
+                    <form class="form">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" required>
+                            <label for="name">Your Name</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" required>
+                            <label for="email">Your Email</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subject" name="subject" required>
+                            <label for="subject">Subject</label>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                            <label for="message">Your Message</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-text">
+                    <p>&copy; 2024 Shreyansh Modi. All rights reserved.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
