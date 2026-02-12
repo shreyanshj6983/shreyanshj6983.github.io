@@ -1,188 +1,316 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Mobile Navigation
-    const hamburger = document.querySelector('.hamburger');
-    const navMenu = document.querySelector('.nav-menu');
-    
-    hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
-        navMenu.classList.toggle('active');
+document.addEventListener("DOMContentLoaded", () => {
+  const root = document.documentElement;
+  const header = document.querySelector(".site-header");
+  const year = document.getElementById("year");
+  const themeToggle = document.getElementById("theme-toggle");
+  const recruiterToggle = document.getElementById("recruiter-toggle");
+
+  if (year) year.textContent = new Date().getFullYear();
+
+  const savedTheme = localStorage.getItem("portfolio_theme");
+  if (savedTheme === "light" || savedTheme === "dark") root.setAttribute("data-theme", savedTheme);
+
+  const savedRecruiterMode = localStorage.getItem("portfolio_recruiter_mode");
+  if (savedRecruiterMode === "on" || savedRecruiterMode === "off") {
+    root.setAttribute("data-recruiter", savedRecruiterMode);
+  }
+
+  const syncThemeIcon = () => {
+    if (!themeToggle) return;
+    const icon = themeToggle.querySelector("i");
+    const isLight = root.getAttribute("data-theme") === "light";
+    if (icon) icon.className = isLight ? "fa-solid fa-sun" : "fa-solid fa-moon";
+    themeToggle.setAttribute("aria-label", isLight ? "Switch to dark theme" : "Switch to light theme");
+  };
+
+  const syncRecruiterState = () => {
+    if (!recruiterToggle) return;
+    const isOn = root.getAttribute("data-recruiter") === "on";
+    recruiterToggle.textContent = isOn ? "Recruiter Mode: On" : "Recruiter Mode: Off";
+    recruiterToggle.classList.toggle("active", isOn);
+    recruiterToggle.setAttribute("aria-pressed", String(isOn));
+  };
+
+  syncThemeIcon();
+  syncRecruiterState();
+
+  if (themeToggle) {
+    themeToggle.addEventListener("click", () => {
+      const nextTheme = root.getAttribute("data-theme") === "light" ? "dark" : "light";
+      root.setAttribute("data-theme", nextTheme);
+      localStorage.setItem("portfolio_theme", nextTheme);
+      syncThemeIcon();
+    });
+  }
+
+  if (recruiterToggle) {
+    recruiterToggle.addEventListener("click", () => {
+      const nextMode = root.getAttribute("data-recruiter") === "on" ? "off" : "on";
+      root.setAttribute("data-recruiter", nextMode);
+      localStorage.setItem("portfolio_recruiter_mode", nextMode);
+      syncRecruiterState();
+    });
+  }
+
+  const navToggle = document.querySelector(".nav-toggle");
+  const navLinks = document.querySelector(".nav-links");
+  const navAnchors = document.querySelectorAll(".nav-links a");
+
+  if (navToggle && navLinks) {
+    navToggle.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("open");
+      navToggle.setAttribute("aria-expanded", String(isOpen));
     });
 
-    // Close mobile menu when clicking a link
-    document.querySelectorAll('.nav-link').forEach(link => {
-        link.addEventListener('click', () => {
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
-        });
+    navAnchors.forEach((a) => {
+      a.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        navToggle.setAttribute("aria-expanded", "false");
+      });
     });
+  }
 
-    // Navbar scroll effect
-    window.addEventListener('scroll', () => {
-        const navbar = document.querySelector('.navbar');
-        navbar.classList.toggle('scrolled', window.scrollY > 50);
-    });
+  const setHeaderState = () => {
+    if (!header) return;
+    header.classList.toggle("scrolled", window.scrollY > 10);
+  };
+  setHeaderState();
+  window.addEventListener("scroll", setHeaderState, { passive: true });
 
-    // Typing animation
-    const typedTextSpan = document.getElementById('typed-text');
-    const textArray = ["Python Developer", "Machine Learning Engineer", "Data Analyst", "AI Enthusiast"];
-    const typingDelay = 100;
-    const erasingDelay = 50;
-    const newTextDelay = 2000;
-    let textArrayIndex = 0;
+  const sections = document.querySelectorAll("main section[id]");
+  const spyObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const id = entry.target.getAttribute("id");
+        navAnchors.forEach((a) => a.classList.toggle("active", a.getAttribute("href") === `#${id}`));
+      });
+    },
+    { rootMargin: "-40% 0px -50% 0px", threshold: 0.01 }
+  );
+  sections.forEach((s) => spyObserver.observe(s));
+
+  const revealEls = document.querySelectorAll(".reveal");
+  const revealObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("in-view");
+        observer.unobserve(entry.target);
+      });
+    },
+    { threshold: 0.1 }
+  );
+  revealEls.forEach((el) => revealObserver.observe(el));
+
+  const typedRole = document.getElementById("typed-role");
+  const roles = [
+    "Data Science model building and experimentation",
+    "Machine Learning deployment and optimization",
+    "Cloud-based AI systems on AWS",
+    "GenAI and RAG workflow development",
+  ];
+
+  if (typedRole) {
+    let roleIndex = 0;
     let charIndex = 0;
+    let isDeleting = false;
 
-    function type() {
-        if (charIndex < textArray[textArrayIndex].length) {
-            typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
-            charIndex++;
-            setTimeout(type, typingDelay);
-        } else {
-            setTimeout(erase, newTextDelay);
+    const typeLoop = () => {
+      const current = roles[roleIndex];
+      if (!isDeleting) {
+        typedRole.textContent = current.slice(0, charIndex + 1);
+        charIndex += 1;
+        if (charIndex === current.length) {
+          isDeleting = true;
+          setTimeout(typeLoop, 1200);
+          return;
         }
+      } else {
+        typedRole.textContent = current.slice(0, charIndex - 1);
+        charIndex -= 1;
+        if (charIndex === 0) {
+          isDeleting = false;
+          roleIndex = (roleIndex + 1) % roles.length;
+        }
+      }
+      setTimeout(typeLoop, isDeleting ? 30 : 58);
+    };
+    typeLoop();
+  }
+
+  const filterButtons = document.querySelectorAll(".filter-btn");
+  const projectCards = document.querySelectorAll(".project-card");
+
+  filterButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      filterButtons.forEach((b) => {
+        b.classList.remove("active");
+        b.setAttribute("aria-pressed", "false");
+      });
+      btn.classList.add("active");
+      btn.setAttribute("aria-pressed", "true");
+
+      const filter = btn.dataset.filter;
+      projectCards.forEach((card) => {
+        const show = filter === "all" || (card.dataset.category || "").includes(filter);
+        card.style.display = show ? "grid" : "none";
+      });
+    });
+  });
+
+  const extraCerts = document.querySelectorAll(".extra-cert");
+  const toggleCerts = document.getElementById("toggle-certs");
+  if (toggleCerts && extraCerts.length > 0) {
+    let expanded = false;
+    toggleCerts.addEventListener("click", () => {
+      expanded = !expanded;
+      extraCerts.forEach((card) => {
+        card.style.display = expanded ? "block" : "none";
+      });
+      toggleCerts.textContent = expanded ? "Show Less" : "Show More";
+    });
+  }
+
+  const modalHandles = [
+    {
+      openBtn: document.getElementById("open-resume-modal"),
+      modal: document.getElementById("resume-modal"),
+      closeBtn: document.getElementById("close-resume-modal"),
+    },
+    {
+      openBtn: document.getElementById("view-cert-gallery"),
+      modal: document.getElementById("cert-gallery-modal"),
+      closeBtn: document.getElementById("close-cert-gallery"),
+    },
+  ];
+
+  let activeModal = null;
+  let lastFocusedElement = null;
+
+  const getFocusable = (container) => {
+    if (!container) return [];
+    return Array.from(
+      container.querySelectorAll(
+        'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])'
+      )
+    );
+  };
+
+  const closeModal = (modal) => {
+    if (!modal) return;
+    modal.classList.remove("open");
+    modal.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+    activeModal = null;
+    if (lastFocusedElement) lastFocusedElement.focus();
+  };
+
+  const openModal = (modal) => {
+    if (!modal) return;
+    lastFocusedElement = document.activeElement;
+    modal.classList.add("open");
+    modal.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+    activeModal = modal;
+    const focusable = getFocusable(modal);
+    if (focusable.length > 0) focusable[0].focus();
+  };
+
+  modalHandles.forEach(({ openBtn, modal, closeBtn }) => {
+    if (openBtn && modal) openBtn.addEventListener("click", () => openModal(modal));
+    if (closeBtn && modal) closeBtn.addEventListener("click", () => closeModal(modal));
+    if (modal) {
+      modal.addEventListener("click", (e) => {
+        if (e.target === modal) closeModal(modal);
+      });
+    }
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && activeModal) {
+      closeModal(activeModal);
+      return;
     }
 
-    function erase() {
-        if (charIndex > 0) {
-            typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex - 1);
-            charIndex--;
-            setTimeout(erase, erasingDelay);
-        } else {
-            textArrayIndex++;
-            if (textArrayIndex >= textArray.length) textArrayIndex = 0;
-            setTimeout(type, typingDelay + 1000);
-        }
+    if (e.key === "Tab" && activeModal) {
+      const focusable = getFocusable(activeModal);
+      if (focusable.length === 0) return;
+
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      const current = document.activeElement;
+
+      if (e.shiftKey && current === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && current === last) {
+        e.preventDefault();
+        first.focus();
+      }
     }
+  });
 
-    // Start typing animation on page load
-    setTimeout(type, 1000);
+  const form = document.getElementById("contact-form");
+  const formNote = document.getElementById("form-note");
+  const submitBtn = document.getElementById("submit-btn");
 
-    // Project filtering
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const projectCards = document.querySelectorAll('.project-card');
-    const certCards = document.querySelectorAll('.cert-card');
+  const validators = {
+    name: (v) => (v.trim().length >= 2 ? "" : "Name must be at least 2 characters."),
+    email: (v) => (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()) ? "" : "Enter a valid email address."),
+    subject: (v) => (v.trim().length >= 3 ? "" : "Subject must be at least 3 characters."),
+    message: (v) => (v.trim().length >= 10 ? "" : "Message must be at least 10 characters."),
+  };
 
-    filterButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            // Remove active class from all buttons
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            // Add active class to clicked button
-            button.classList.add('active');
-            
-            const filterValue = button.getAttribute('data-filter');
-            
-            // Filter projects
-            if (button.parentElement.classList.contains('project-filters')) {
-                projectCards.forEach(card => {
-                    if (filterValue === 'all' || card.getAttribute('data-category').includes(filterValue)) {
-                        card.style.display = 'block';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
-            }
-            
-            // Filter certificates
-            if (button.parentElement.classList.contains('cert-filters')) {
-                certCards.forEach(card => {
-                    if (filterValue === 'all' || card.getAttribute('data-category').includes(filterValue)) {
-                        card.style.display = 'block';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
-            }
-        });
+  const validateField = (field) => {
+    const wrapper = field.closest(".field");
+    const errorEl = wrapper ? wrapper.querySelector(".error") : null;
+    const validate = validators[field.name];
+    if (!validate) return true;
+
+    const error = validate(field.value);
+    if (wrapper) wrapper.classList.toggle("invalid", Boolean(error));
+    if (errorEl) errorEl.textContent = error;
+    return !error;
+  };
+
+  if (form) {
+    const fields = form.querySelectorAll("input, textarea");
+    fields.forEach((field) => {
+      field.addEventListener("blur", () => validateField(field));
+      field.addEventListener("input", () => {
+        if (field.closest(".field")?.classList.contains("invalid")) validateField(field);
+      });
     });
 
-    // Form submission
-    const contactForm = document.querySelector('.form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const submitButton = this.querySelector('button[type="submit"]');
-            submitButton.classList.add('loading');
-            
-            // Simulate form submission (replace with actual AJAX call)
-            setTimeout(() => {
-                submitButton.classList.remove('loading');
-                
-                // Show success message
-                const successMessage = document.createElement('div');
-                successMessage.className = 'form-success active';
-                successMessage.textContent = 'Your message has been sent successfully!';
-                this.appendChild(successMessage);
-                
-                // Reset form
-                this.reset();
-                
-                // Remove success message after 5 seconds
-                setTimeout(() => {
-                    successMessage.remove();
-                }, 5000);
-            }, 1500);
-        });
-    }
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      let valid = true;
+      fields.forEach((f) => {
+        if (!validateField(f)) valid = false;
+      });
 
-    // Initialize AOS (Animate On Scroll)
-    AOS.init({
-        duration: 800,
-        easing: 'ease-in-out',
-        once: true,
-        offset: 100
+      if (!valid) {
+        if (formNote) formNote.textContent = "Please correct the highlighted fields.";
+        return;
+      }
+
+      if (submitBtn) submitBtn.disabled = true;
+      if (formNote) formNote.textContent = "Preparing your email draft...";
+
+      const data = new FormData(form);
+      const name = encodeURIComponent(String(data.get("name") || ""));
+      const email = encodeURIComponent(String(data.get("email") || ""));
+      const subject = encodeURIComponent(String(data.get("subject") || ""));
+      const message = encodeURIComponent(String(data.get("message") || ""));
+      const body = `Name: ${name}%0AEmail: ${email}%0A%0A${message}`;
+
+      setTimeout(() => {
+        window.location.href = `mailto:shreyanshj5067@gmail.com?subject=${subject}&body=${body}`;
+        if (formNote) formNote.textContent = "Email draft opened in your mail app.";
+        form.reset();
+        if (submitBtn) submitBtn.disabled = false;
+      }, 300);
     });
-
-    // Matrix background effect
-    const matrixCanvas = document.getElementById('matrix-canvas');
-    if (matrixCanvas) {
-        const ctx = matrixCanvas.getContext('2d');
-        
-        // Set canvas size
-        matrixCanvas.width = window.innerWidth;
-        matrixCanvas.height = window.innerHeight;
-        
-        // Matrix characters
-        const matrixChars = "01";
-        const fontSize = 14;
-        const columns = matrixCanvas.width / fontSize;
-        
-        // Set drops
-        const drops = [];
-        for (let i = 0; i < columns; i++) {
-            drops[i] = Math.floor(Math.random() * matrixCanvas.height / fontSize) * fontSize;
-        }
-        
-        // Draw function
-        function draw() {
-            // Black background with opacity
-            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
-            ctx.fillRect(0, 0, matrixCanvas.width, matrixCanvas.height);
-            
-            // Set text style
-            ctx.fillStyle = '#0f0';
-            ctx.font = fontSize + 'px monospace';
-            
-            // Draw characters
-            for (let i = 0; i < drops.length; i++) {
-                const text = matrixChars.charAt(Math.floor(Math.random() * matrixChars.length));
-                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-                
-                // Reset drop if it reaches bottom
-                if (drops[i] * fontSize > matrixCanvas.height && Math.random() > 0.975) {
-                    drops[i] = 0;
-                }
-                
-                drops[i]++;
-            }
-        }
-        
-        // Animation loop
-        setInterval(draw, 50);
-        
-        // Handle window resize
-        window.addEventListener('resize', () => {
-            matrixCanvas.width = window.innerWidth;
-            matrixCanvas.height = window.innerHeight;
-        });
-    }
+  }
 });
